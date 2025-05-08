@@ -12,7 +12,7 @@ import (
 )
 
 func main() {
-	w := "/Users/brandon/go/src/github.com/btdeviant/search/build/lib/"
+	w := "<set path to dylib>"
 	os.Setenv("DYLD_LIBRARY_PATH", w)
 	if err := search.Initialize(); err != nil {
 		panic(err)

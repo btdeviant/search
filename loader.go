@@ -24,13 +24,20 @@ var free_context func(ctx uintptr)
 var embed_size func(model uintptr) int32
 var embed_text func(model uintptr, text string, out_embeddings []float32, out_tokens *uint32) int
 
-func init() {
+// Initialize loads the llama dynamic library and registers the necessary functions.
+// This function must be called before any other functions in this package.
+func Initialize() error {
 	libpath, err := findLlama()
 	if err != nil {
-		panic(err)
+		return fmt.Errorf("failed to find llama library: %w", err)
 	}
-	if libptr, err = load(libpath); err != nil {
-		panic(err)
+
+	// Try to load the library.
+	// The RTLD_NOW flag means all symbols are resolved when the library is loaded.
+	// The RTLD_GLOBAL flag means symbols from this library are made available to other libraries.
+	libptr, err = purego.Dlopen(libpath, purego.RTLD_NOW|purego.RTLD_GLOBAL)
+	if err != nil {
+		return fmt.Errorf("failed to load library from %s: %w", libpath, err)
 	}
 
 	// Load the library functions
@@ -44,6 +51,7 @@ func init() {
 
 	// Initialize the library (Log level WARN)
 	load_library(2)
+	return nil
 }
 
 // --------------------------------- Library Lookup ---------------------------------

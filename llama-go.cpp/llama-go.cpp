@@ -69,9 +69,9 @@ extern "C" {
         llama_backend_init();
         llama_numa_init(GGML_NUMA_STRATEGY_DISTRIBUTE);
 
-        // Set the log level
+        // Set the log level to ERROR only
         auto desired_ptr = new ggml_log_level;
-        *desired_ptr = desired;
+        *desired_ptr = GGML_LOG_LEVEL_ERROR;
         llama_log_set([](ggml_log_level level, const char* text, void* user_data) {
             if (level < *(ggml_log_level*)user_data) {
                 return; // No-op

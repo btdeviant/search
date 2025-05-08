@@ -12,6 +12,12 @@ import (
 )
 
 func main() {
+	w := "/Users/brandon/go/src/github.com/btdeviant/search/build/lib/"
+	os.Setenv("DYLD_LIBRARY_PATH", w)
+	if err := search.Initialize(); err != nil {
+		panic(err)
+	}
+
 	m, err := search.NewVectorizer("../dist/MiniLM-L6-v2.Q8_0.gguf", 0)
 	if err != nil {
 		panic(err)

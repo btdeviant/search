@@ -1,12 +1,19 @@
 <p align="center">
 <img width="330" height="110" src=".github/logo.png" border="0" alt="kelindar/search">
 <br>
-<img src="https://img.shields.io/github/go-mod/go-version/kelindar/search" alt="Go Version">
-<a href="https://pkg.go.dev/github.com/kelindar/search"><img src="https://pkg.go.dev/badge/github.com/kelindar/search" alt="PkgGoDev"></a>
-<a href="https://goreportcard.com/report/github.com/kelindar/search"><img src="https://goreportcard.com/badge/github.com/kelindar/search" alt="Go Report Card"></a>
+<img src="https://img.shields.io/github/go-mod/go-version/btdeviant/search" alt="Go Version">
+<a href="https://pkg.go.dev/github.com/btdeviant/search"><img src="https://pkg.go.dev/badge/github.com/btdeviant/search" alt="PkgGoDev"></a>
+<a href="https://goreportcard.com/report/github.com/btdeviant/search"><img src="https://goreportcard.com/badge/github.com/btdeviant/search" alt="Go Report Card"></a>
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License"></a>
-<a href="https://coveralls.io/github/kelindar/search"><img src="https://coveralls.io/repos/github/kelindar/search/badge.svg" alt="Coverage"></a>
+<a href="https://coveralls.io/github/btdeviant/search"><img src="https://coveralls.io/repos/github/btdeviant/search/badge.svg" alt="Coverage"></a>
 </p>
+
+# Attributions
+This was forked from [github.com/kelindar/search](https://github.com/kelindar/search)! 
+The only real modification in here is removing the `init` in the loader so initialization of the lib
+can happen explicity instead of implicitly on import. 
+
+Another minor modification was made to the llama.cpp submodule to build with less verbose logging. 
 
 # Semantic Search
 

@@ -11,7 +11,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/kelindar/search"
+	"github.com/btdeviant/search"
 )
 
 func loadModel() *search.Vectorizer {

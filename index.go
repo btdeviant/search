@@ -7,7 +7,7 @@ import (
 	"math"
 	"sort"
 
-	"github.com/kelindar/search/internal/cosine/simd"
+	"github.com/btdeviant/search/internal/cosine/simd"
 )
 
 type Vector = []float32

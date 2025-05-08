@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/kelindar/search"
+	"github.com/btdeviant/search"
 )
 
 func main() {
